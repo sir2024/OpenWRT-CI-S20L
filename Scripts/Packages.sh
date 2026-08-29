@@ -62,6 +62,17 @@ UPDATE_PACKAGE "openclash" "vernesong/OpenClash" "dev" "pkg"
 UPDATE_PACKAGE "passwall" "Openwrt-Passwall/openwrt-passwall" "main" "pkg"
 UPDATE_PACKAGE "passwall2" "Openwrt-Passwall/openwrt-passwall2" "main" "pkg"
 
+# S20 固化插件：统一从 small-package 提取实际包目录。
+UPDATE_PACKAGE "frp" "kenzok8/small-package" "main" "pkg" "frpc frps"
+UPDATE_PACKAGE "nps" "kenzok8/small-package" "main" "pkg"
+UPDATE_PACKAGE "luci-app-npc" "kenzok8/small-package" "main" "pkg"
+UPDATE_PACKAGE "iptvhelper" "kenzok8/small-package" "main" "pkg"
+UPDATE_PACKAGE "adguardhome" "kenzok8/small-package" "main" "pkg"
+UPDATE_PACKAGE "luci-app-adguardhome" "kenzok8/small-package" "main" "pkg"
+UPDATE_PACKAGE "ddns-go" "kenzok8/small-package" "main" "pkg"
+UPDATE_PACKAGE "luci-app-ddns-go" "kenzok8/small-package" "main" "pkg"
+UPDATE_PACKAGE "luci-app-openclash" "kenzok8/small-package" "main" "pkg"
+
 UPDATE_PACKAGE "luci-app-tailscale" "asvow/luci-app-tailscale" "main"
 
 #UPDATE_PACKAGE "athena-led" "unraveloop/JDC-AX6600-Athena-LED-Controller" "main"
