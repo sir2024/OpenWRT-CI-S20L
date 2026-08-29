@@ -1,0 +1,38 @@
+# SPDX-License-Identifier: MIT
+
+name: S20L-S20P
+
+on:
+  schedule:
+    # Sunday 02:00 UTC = Sunday 10:00 China time.
+    - cron: "0 2 * * 0"
+  workflow_dispatch:
+    inputs:
+      PACKAGE:
+        description: "Additional package config lines"
+        required: false
+        type: string
+      TEST:
+        description: "Only generate and validate the config"
+        required: false
+        default: false
+        type: boolean
+
+permissions: write-all
+
+jobs:
+  config:
+    uses: ./.github/workflows/WRT-CORE.yml
+    with:
+      WRT_CONFIG: S20-WIFI
+      WRT_THEME: aurora
+      WRT_NAME: S20
+      WRT_SSID: S20
+      WRT_WORD: 12345678
+      WRT_IP: 192.168.10.1
+      WRT_PW: 无
+      WRT_REPO: https://github.com/VIKINGYFY/immortalwrt.git
+      WRT_BRANCH: owrt
+      WRT_SOURCE: VIKINGYFY/immortalwrt
+      WRT_PACKAGE: ${{ inputs.PACKAGE }}
+      WRT_TEST: ${{ inputs.TEST || false }}
